@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DungeonLibrary;
 
 namespace Dungeon
 {
@@ -13,9 +14,11 @@ namespace Dungeon
             Console.Title = "Dungeon Of Doom";
             Console.WriteLine("Your journey begins...\n");
 
-            //TODO 1. Create a player & a weapon
-            //2. Create a loop for the game
+            //1. Create a player & a weapon
+            Weapon sword = new Weapon(1, 8, "Longsword", 10, false);
+            Player player = new Player("Leroy Jenkins", 70, 5, 40, 40, Race.Human, sword);
 
+            //2. Create a loop for the game
             bool exit = false;
             do
             {
@@ -24,8 +27,8 @@ namespace Dungeon
                 Console.WriteLine(GetRoom());
 
                 //TODO 4. Create a monster
-                //5. Create a loop for the menu
 
+                //5. Create a loop for the menu
                 bool reload = false;
                 do
                 {
@@ -53,7 +56,8 @@ namespace Dungeon
                             break;
                         case ConsoleKey.P:
                             Console.WriteLine("Player Info");
-                            //TODO 11. Print out player info
+                            //11. Print out player info
+                            Console.WriteLine(player);
                             break;
                         case ConsoleKey.M:
                             Console.WriteLine("Monster Info");
